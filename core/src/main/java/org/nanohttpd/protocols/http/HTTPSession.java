@@ -679,6 +679,7 @@ public class HTTPSession implements IHTTPSession {
             FileOutputStream fileOutputStream = null;
             try {
                 ITempFile tempFile = this.tempFileManager.createTempFile(filename_hint);
+                System.out.println("MULTIPART TEMPFILE: " + tempFile.getName());
                 ByteBuffer src = b.duplicate();
                 fileOutputStream = new FileOutputStream(tempFile.getName());
                 FileChannel dest = fileOutputStream.getChannel();
