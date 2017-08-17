@@ -100,7 +100,9 @@ public class ContentType {
     }
 
     public boolean isMultipart() {
-        return MULTIPART_FORM_DATA_HEADER.equalsIgnoreCase(contentType);
+        if (contentType == null)
+    		return false;
+        return contentType.toLowerCase().startsWith(MULTIPART_FORM_DATA_HEADER);
     }
 
     public ContentType tryUTF8() {
