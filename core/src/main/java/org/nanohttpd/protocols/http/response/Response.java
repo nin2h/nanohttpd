@@ -114,7 +114,7 @@ public class Response implements Closeable {
 
     private List<String> cookieHeaders;
 
-    private GzipUsage gzipUsage = GzipUsage.DEFAULT;
+    private GzipUsage gzipUsage = GzipUsage.NEVER;
 
     private static enum GzipUsage {
         DEFAULT,
@@ -140,7 +140,7 @@ public class Response implements Closeable {
             this.contentLength = totalBytes;
         }
         this.chunkedTransfer = this.contentLength < 0;
-        this.keepAlive = true;
+        this.keepAlive = false;
         this.cookieHeaders = new ArrayList(10);
     }
 

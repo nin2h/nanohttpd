@@ -431,7 +431,7 @@ public class HTTPSession implements IHTTPSession {
                 if (acceptEncoding == null || !acceptEncoding.contains("gzip")) {
                     r.setUseGzip(false);
                 }
-                r.setKeepAlive(keepAlive);
+                r.setKeepAlive(false);
                 r.send(this.outputStream);
             }
             if (!keepAlive || r.isCloseConnection()) {
