@@ -10,6 +10,7 @@ LOCAL_MODULE := nanohttpd
 LOCAL_MODULE_TAGS := optional
 LOCAL_SDK_VERSION := current
 LOCAL_PROGUARD_ENABLED := disabled
+LOCAL_JACK_ENABLED := disabled
 
 
 # Build a static jar file.
